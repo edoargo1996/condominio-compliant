@@ -22,7 +22,7 @@ MVP locale per amministratori condominiali:
 
 ## Avvio locale
 ```bash
-cd /mnt/obsidian-vault/projects/condominio-compliant
+cd ~/.openclaw/workspace-developer/business-ideas/condominio-compliant
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -45,7 +45,7 @@ Le notifiche vengono salvate in `notifications.log` (simulazione email/WhatsApp 
 
 ## Test
 ```bash
-cd /mnt/obsidian-vault/projects/condominio-compliant
+cd ~/.openclaw/workspace-developer/business-ideas/condominio-compliant
 source .venv/bin/activate
 pytest -q
 ```
