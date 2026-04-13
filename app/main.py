@@ -54,7 +54,7 @@ def dashboard(request: Request):
 @app.get("/onboarding", response_class=HTMLResponse)
 def onboarding_form(request: Request):
     with Session(engine) as session:
-        categories = sorted(set(c for c, in session.exec(select(DeadlineType.category)).all()))
+        categories = sorted(set(session.exec(select(DeadlineType.category)).all()))
     return templates.TemplateResponse("onboarding.html", {"request": request, "categories": categories})
 
 
