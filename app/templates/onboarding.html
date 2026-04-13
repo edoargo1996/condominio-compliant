@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><title>Onboarding</title>
+<style>body{font-family:Arial;max-width:900px;margin:2rem auto;padding:0 1rem}label{display:block;margin-top:.8rem}input{width:100%;padding:.5rem}fieldset{margin-top:1rem}button{margin-top:1rem;padding:.7rem 1rem}</style></head>
+<body>
+<h1>Onboarding condominio</h1>
+<form method="post" action="/onboarding">
+<label>Nome amministratore <input name="admin_name" required></label>
+<label>Email amministratore <input name="admin_email" type="email" required></label>
+<label>WhatsApp (opzionale) <input name="admin_whatsapp"></label>
+<label>Nome condominio <input name="building_name" required></label>
+<label>Città <input name="city" required></label>
+<label>Indirizzo <input name="address" required></label>
+<fieldset><legend>Tipologie impiantistiche</legend>
+{% for category in categories %}
+<label><input type="checkbox" name="categories" value="{{ category }}" checked> {{ category }}</label>
+{% endfor %}
+</fieldset>
+<button type="submit">Crea e genera scadenze</button>
+</form>
+</body></html>

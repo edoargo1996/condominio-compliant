@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><title>Dashboard</title>
+<style>body{font-family:Arial;max-width:1200px;margin:2rem auto;padding:0 1rem}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:.5rem}th{background:#f4f4f4}.ok{color:#0a7f2e}.in_scadenza{color:#b26b00}.scaduto{color:#b00020}</style></head>
+<body>
+<h1>Dashboard scadenze</h1>
+<p><a href="/onboarding">+ Nuovo condominio</a> | <a href="/api/notifications/run">Esegui notifiche</a></p>
+<table>
+<thead><tr><th>Condominio</th><th>Città</th><th>Amministratore</th><th>Scadenza</th><th>Normativa</th><th>Data</th><th>Giorni</th><th>Stato</th></tr></thead>
+<tbody>
+{% for row in rows %}
+<tr>
+<td>{{ row.building }}</td><td>{{ row.city }}</td><td>{{ row.admin }}</td>
+<td>{{ row.deadline }}</td><td>{{ row.law }}</td><td>{{ row.due_date }}</td>
+<td>{{ row.days_left }}</td><td class="{{ row.status }}">{{ row.status }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body></html>
